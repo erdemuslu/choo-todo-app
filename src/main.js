@@ -1,10 +1,13 @@
-const choo = require('choo')
+import choo from 'choo'
+
+// load style
+import './style/index.scss'
 
 // load store
-const store = require('./store/store')
+import store from './store/store'
 
 // load pages
-const home = require('./pages/home')
+import home from './pages/home'
 
 // define app
 const app = choo()
