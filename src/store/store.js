@@ -1,6 +1,7 @@
-function store (state, emitter) {
+function store (ctx) {
+  console.log(ctx)
   // define store variables
-  state.all = [
+  ctx.all = [
     {
       title: 'Example todo item 1',
       completed: true
