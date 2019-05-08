@@ -19,4 +19,4 @@ app.use(store)
 app.route('/', home)
 
 // mount app
-app.mount('body')
+app.mount(document.getElementById('root'))

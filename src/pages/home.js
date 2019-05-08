@@ -6,9 +6,9 @@ import List from '../components/list'
 function home (state) {
   return (
     html`
-      <body>
+      <div>
         ${state.cache(List, 'list').render()}
-      </body>
+      </div>
     `
   )
 }

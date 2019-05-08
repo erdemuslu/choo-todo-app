@@ -1,5 +1,4 @@
 function store (ctx) {
-  console.log(ctx)
   // define store variables
   ctx.all = [
     {
