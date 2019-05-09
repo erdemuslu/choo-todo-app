@@ -1,4 +1,4 @@
-function store (ctx) {
+function store (ctx, emitter) {
   // define store variables
   ctx.all = [
     {
@@ -10,6 +10,16 @@ function store (ctx) {
       completed: false
     }
   ]
+
+  emitter.on('DOMContentLoaded', () => {
+    console.log('mounted on the DOM')
+  })
+
+  emitter.on('updateItem', () => {
+    ctx.all[0].title = 'New Item'
+
+    emitter.emit('render')
+  })
 }
 
 export default store

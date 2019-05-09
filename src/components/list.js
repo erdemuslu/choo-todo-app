@@ -5,19 +5,25 @@ import Component from 'choo/component'
 import Item from './item'
 
 class List extends Component {
-  constructor (name, { all }) {
+  constructor (name, { all }, emit) {
     super(name)
     this.data = all
+    this.emit = emit
+    this.handleItem = this.handleItem.bind(this)
   }
 
   update () {
-    return false
+    return true
+  }
+
+  handleItem () {
+    this.emit('updateItem')
   }
 
   createElement () {
     return html`
       <div class=${name}>
-        <div class="list">List component</div>
+        <button type="button" onclick=${this.handleItem}>Change</button>
         <ul>
           ${this.data.map((item, index) => Item(item, index))}
         </ul>
